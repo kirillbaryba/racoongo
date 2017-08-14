@@ -1,0 +1,22 @@
+/*
+* main
+*/
+@import "mixins";
+@import "libs";
+
+@import "variables";
+@import "normalize";
+
+@import "partials/navbar";
+@import "base";
+@import "type";
+@import "fonts-icon";
+@import "partials/head";
+@import "partials/categories";
+@import "partials/hello";
+@import "partials/projects";
+@import "partials/btn";
+@import "partials/content";
+@import "partials/footer";
+@import "components/navbar-toggle";
+

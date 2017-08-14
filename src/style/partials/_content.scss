@@ -1,0 +1,53 @@
+
+.photo{
+    position: relative;
+    height: calc(100vh - 90px);
+    background: url('../img/header-bg.jpg') center center fixed no-repeat;
+    background-size: cover;
+}
+
+.main{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    &__content{
+        flex: 1;
+        @media screen and (max-height: 670px){
+            .header{
+                position: fixed;
+                top: 0;
+                &__container{
+                    height: 80px;
+                }
+                background-color: rgba(150, 178, 220, 0.3);
+                box-shadow: 0px -5px 20px 0px rgba(0, 0, 0, 0.3);
+                z-index: 3;
+                @include transition($base-transition);
+            }
+        }
+    }
+}
+
+
+// photo-block
+.tagline{
+    @include centered(false, true);
+    @include mq-only(lg){
+        top: 40%;
+    }
+    @include mq-down(xs){
+        top: 35%;
+    }
+    &__title{
+        margin: 0;
+        color: $color-default;
+        @include font-type($base-font-family, $font-size-h2, $header-title-line-height, 100);
+        @extend .text-uppercase;
+        @include mq-only(sm){
+            font-size: $font-size-h2 / 1.5;
+        }
+        @include mq-down(xs){
+            font-size: $font-size-h2 / 2;
+        }
+    }
+}

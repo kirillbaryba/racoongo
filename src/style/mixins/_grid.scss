@@ -1,0 +1,52 @@
+@mixin make-container($gutter: $grid-gutter-width) {
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: ($gutter / 2);
+	padding-left:  ($gutter / 2);
+	max-width: 100%;
+}
+
+// For each breakpoint, define the maximum width of the container in a media query
+@mixin make-container-max-widths($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+	@each $breakpoint, $container-max-width in $max-widths {
+		@include mq-up($breakpoint, $breakpoints) {
+			width: $container-max-width;
+		}
+	}
+}
+
+// Creates a wrapper for a series of columns
+@mixin make-row($gutter: $grid-gutter-width) {
+	margin-left:  ($gutter / -2);
+	margin-right: ($gutter / -2);
+	@include clearfix;
+}
+
+@mixin make-grid-columns($columns: $grid-columns, $gutter: $grid-gutter-width, $breakpoints: $grid-breakpoints) {
+	%grid-column {
+		min-height: 1px; // Prevent columns from collapsing when empty
+		padding-right: ($gutter / 2);
+		padding-left:  ($gutter / 2);
+		float: left;
+	}
+
+	@each $breakpoint in map-keys($breakpoints) {
+		$infix: breakpoint-infix($breakpoint, $breakpoints);
+
+		// Allow columns to stretch full width below their breakpoints
+		@for $i from 1 through $columns {
+			.g-col#{$infix}-#{$i} {
+				@extend %grid-column;
+			}
+		}
+
+		@include mq-up($breakpoint, $breakpoints) {
+			// Provide basic `.col-{bp}` classes for equal-width flexbox columns
+			@for $i from 1 through $columns {
+				.g-col#{$infix}-#{$i} {
+					width: percentage($i / $columns);
+				}
+			}
+		}
+	}
+}

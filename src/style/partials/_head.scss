@@ -1,0 +1,52 @@
+$header-vh: 90px;
+$header-position: absolute;
+$header-position-vh: 125px;
+
+.header{
+	$this: &;
+	background-color: transparent;
+	position: $header-position;
+	top: $header-position-vh;
+	width: 100%;
+	z-index: 2;
+
+	&--is-visible{
+		@include mq-down(lg) {
+			z-index: 3;
+			height: 100%;
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			position: fixed;
+			.navbar-logo{
+				position: absolute;
+				width: 100%;
+				text-align: left;
+				//fix logo
+				padding-left: $base-padding * 1.5;
+			}
+			#{$this}__container{
+				display: flex;
+				flex-direction: column;
+				height: 100%;
+				width: 100%;
+				padding: 0;
+			}
+		}
+	}
+	@include mq-down(lg) {
+		top: 0;
+	}
+	/*@include mq-only(md) {
+		top: 0;
+	}*/
+	&.js-#{$this}{
+
+}
+	&__container{
+		height: $header-vh;
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

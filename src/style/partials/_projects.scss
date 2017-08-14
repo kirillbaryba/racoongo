@@ -1,0 +1,28 @@
+.projects{
+	@extend .info;
+	&__title{
+		margin-top: 0;
+		margin-bottom: $base-padding * 3;
+	}
+	&__text{
+		padding-right: 10%;
+	}
+	&__text + &__btn{
+		margin-top: $base-padding * 1.5;
+	}
+	&__img{
+		width: 100%;
+		height: auto;
+		display: block;
+	}
+}
+
+//fixed arrows carusel
+.flickity-prev-next-button{
+	&.next{
+		right: 50px;
+	}
+	&.previous{
+		left: 50px;
+	}
+}

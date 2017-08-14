@@ -1,0 +1,32 @@
+$footer-bg-color: $color-secondary;
+.footer{
+    padding: 65px 0 55px;
+    background: $footer-bg-color;
+    text-align: center;
+    @include font-type($font-family-Montserrat, $font-size-h6, $header-title-line-height, normal);
+    &__item{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: $base-padding * 2 ;
+    }
+    &__item + .social{
+        margin-top: $base-padding * 3;
+    }
+}
+
+.social{
+    &__item{
+        display: inline-flex;
+        margin: 0 $base-padding * 2;
+        @include links($footer-link-color, null, $footer-link-color-hover, $color-default, $footer-link-color-active);
+    }
+    &__icon{
+        @extend .icon-md;
+    }
+}
+
+.fax, .mailto{
+    color: $color-default;
+    text-decoration: none;
+}

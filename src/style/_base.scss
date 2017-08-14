@@ -1,0 +1,53 @@
+//
+// Base
+// --------------------------------------------------
+
+// Reset the box-sizing
+
+* {
+	@include box-sizing(border-box);
+}
+*:before,
+*:after {
+	@include box-sizing(border-box);
+}
+
+// Body reset
+
+html {
+	@include font-rendering;
+}
+
+body {
+	@include font-type($base-font-family, $base-font-size, $base-line-height, $base-font-weight);
+}
+
+// Reset fonts for relevant elements
+
+input,
+button,
+select,
+textarea {
+	font-family: inherit;
+	font-size: inherit;
+	line-height: inherit;
+}
+
+
+// Links
+
+a {
+	@include transition($base-transition);
+}
+
+// Figures
+
+figure {
+	margin: 0;
+}
+
+// Images
+
+img {
+	vertical-align: middle;
+}

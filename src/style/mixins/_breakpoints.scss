@@ -1,0 +1,35 @@
+@mixin mq-up($name, $breakpoints: $grid-breakpoints) {
+	$min: breakpoint-min($name, $breakpoints);
+	@if $min {
+		@media (min-width: $min) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin mq-down($name, $breakpoints: $grid-breakpoints) {
+	$max: breakpoint-max($name, $breakpoints);
+	@if $max {
+		@media (max-width: $max) {
+			@content;
+		}
+	} @else {
+		@content;
+	}
+}
+
+@mixin mq-between($lower, $upper, $breakpoints: $grid-breakpoints) {
+	@include mq-up($lower, $breakpoints) {
+		@include mq-down($upper, $breakpoints) {
+			@content;
+		}
+	}
+}
+
+@mixin mq-only($name, $breakpoints: $grid-breakpoints) {
+	@include mq-between($name, $name, $breakpoints) {
+		@content;
+	}
+}
