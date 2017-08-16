@@ -1,20 +1,28 @@
 {
-  "name": "frontend-devil",
+  "name": "racoongo",
   "version": "1.0.0",
-  "homepage": "https://github.com/Insayt/frontend-devil",
+  "homepage": "https://github.com/kirillbaryba/racoongo",
   "authors": [
-    "Alex Insayt <insait.rostov@ya.ru>"
+    "kirill.baryba@gmail.com"
   ],
-  "description": "Devil boilerplate for html+js+css apps",
+  "description": "racoongo web template",
   "moduleType": [
     "globals"
   ],
   "license": "MIT",
   "dependencies": {
-    "jquery": "2.*",
-    "flickity": "^2.0.9"
+    "jquery": "2.*"
   },
   "devDependencies": {
-    "components-font-awesome": "^4.7.0"
-  }
+    "components-font-awesome": "^4.7.0",
+    "bootstrap-sass": "bootstrap-sass-official#^3.3.7"
+  },
+  "main": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
 }

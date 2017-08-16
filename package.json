@@ -22,6 +22,7 @@
   },
   "devDependencies": {
     "gulp-plumber": "^1.1.0",
+    "gulp.spritesmith": "^6.5.1",
     "gutil": "^1.6.4",
     "plumber": "^0.4.8"
   }

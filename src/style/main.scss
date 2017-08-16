@@ -7,11 +7,14 @@
 @import "variables";
 @import "normalize";
 
+//sprites
+@import "sprites/png/sprite";
+
 @import "partials/navbar";
 @import "base";
 @import "type";
 @import "fonts-icon";
-@import "partials/head";
+@import "partials/_header";
 @import "partials/categories";
 @import "partials/hello";
 @import "partials/projects";

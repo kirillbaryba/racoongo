@@ -14,6 +14,7 @@ var gulp = require('gulp'),
     pngquant = require('imagemin-pngquant'),
     rimraf = require('rimraf'),
     browserSync = require("browser-sync"),
+    spritesmith = require('gulp.spritesmith'),
     reload = browserSync.reload;
 
 var path = {
@@ -31,7 +32,12 @@ var path = {
         style: 'src/style/main.scss',
         style_libs: 'src/style/libs.scss',
         img: 'src/img/**/*.*',
+        icon_png: 'src/icon/png/*.*',
         fonts: 'src/fonts/**/*.*'
+    },
+    sprite:{
+        sprite_png: 'src/style/sprites/png/',
+        sprite_png_output: 'build/img/sprites'
     },
     watch: {
         html: 'src/**/*.html',
@@ -58,6 +64,23 @@ var config = {
     port: 9000,
     logPrefix: "dev server"
 };
+
+gulp.task('sprite:png', function () {
+    var spriteData = gulp.src(path.src.icon_png)
+        .pipe(spritesmith({
+            imgName: 'sprite.png',
+            cssName: 'sprite.scss',
+
+            //imgPath: '/frontend/app/img/sprites/'
+        }));
+    //return spriteData.pipe(gulp.dest(path.sprite.sprite_png));
+    spriteData.css
+        .pipe(gulp.dest(path.sprite.sprite_png));
+    spriteData.img
+        .pipe(gulp.dest(path.sprite.sprite_png_output));
+
+    return spriteData;
+});
 
 gulp.task('webserver', function () {
     browserSync(config);
@@ -161,7 +184,8 @@ gulp.task('build', [
     'style:build',
     'style:libs',
     'fonts:build',
-    'image:build'
+    'image:build',
+    'sprite:png'
 ]);
 
 

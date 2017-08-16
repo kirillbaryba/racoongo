@@ -12,7 +12,7 @@
 	}
 	&__text {
 		@extend .text-uppercase;
-		@include font-type($font-family-Montserrat,$navbar-link-font-size, null, $base-font-weight);
+		//@include font-type($font-family-opensans,$navbar-link-font-size, null, $base-font-weight);
 		vertical-align: middle;
 		font-size: $navbar-logo-text-size;
 		color: $color-default;
@@ -27,7 +27,7 @@
 .navbar-nav {
 	display: flex;
 	flex-wrap: wrap;
-	@include font-type($font-family-Montserrat,$navbar-link-font-size, null, $base-font-weight);
+	//@include font-type($font-family-Montserrat,$navbar-link-font-size, null, $base-font-weight);
 	@include mq-down(lg) {
 		visibility: hidden;
 		opacity: 0;
@@ -121,5 +121,6 @@
 		margin-left: 60px;
 	}
 }
+
 
 

@@ -50,3 +50,8 @@ $header-position-vh: 125px;
 		flex-wrap: wrap;
 	}
 }
+
+
+.test{
+	@include sprite($chrome);
+}

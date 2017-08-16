@@ -1,9 +1,13 @@
-// base icon path
+// base icon fonts path
 $icon-font-path: '../fonts/';
+
+//base png sprites path
+$icon-png-path: '../sprite/png/';
+
 // base template colors
 $color-default: #ffffff;
 $color-primary: #f5f5f5;
-$color-secondary: #0169b4;
+$color-secondary: #1a505e;
 
 //body default theme
 $body-bg-default: $color-primary;
@@ -14,13 +18,13 @@ $text-color-primary: #878787;
 $text-color-secondary: #999999;
 
 // custom fonts
-$font-family-Raleway: 'Raleway', sans-serif;
-$font-family-Montserrat: 'Montserrat', sans-serif;
+$font-family-opensans: 'Open Sans', sans-serif;
+//$font-family-Montserrat: 'Montserrat', sans-serif;
 
 // base font style
 $base-font-size: 18px !default;
 $base-line-height: 1.667 !default;
-$base-font-family: $font-family-Raleway !default;
+$base-font-family: $font-family-opensans !default;
 $base-font-style: normal !default;
 $base-font-weight: normal !default;
 
