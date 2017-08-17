@@ -37,7 +37,7 @@ var path = {
     },
     sprite:{
         sprite_png: 'src/style/sprites/png/',
-        sprite_png_output: 'build/img/sprites'
+        sprite_png_output: 'build/img/sprites/png'
     },
     watch: {
         html: 'src/**/*.html',
@@ -69,9 +69,8 @@ gulp.task('sprite:png', function () {
     var spriteData = gulp.src(path.src.icon_png)
         .pipe(spritesmith({
             imgName: 'sprite.png',
-            cssName: 'sprite.scss',
-
-            //imgPath: '/frontend/app/img/sprites/'
+            imgPath: '/img/sprite/png/sprite.png',
+            cssName: 'sprite.scss'
         }));
     //return spriteData.pipe(gulp.dest(path.sprite.sprite_png));
     spriteData.css
