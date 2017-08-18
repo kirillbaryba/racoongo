@@ -1,0 +1,178 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$android-name: 'android';
+$android-x: 0px;
+$android-y: 0px;
+$android-offset-x: 0px;
+$android-offset-y: 0px;
+$android-width: 128px;
+$android-height: 128px;
+$android-total-width: 384px;
+$android-total-height: 384px;
+$android-image: '../img/sprite/png/sprite.png';
+$android: (0px, 0px, 0px, 0px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'android', );
+$apple-name: 'apple';
+$apple-x: 128px;
+$apple-y: 0px;
+$apple-offset-x: -128px;
+$apple-offset-y: 0px;
+$apple-width: 128px;
+$apple-height: 128px;
+$apple-total-width: 384px;
+$apple-total-height: 384px;
+$apple-image: '../img/sprite/png/sprite.png';
+$apple: (128px, 0px, -128px, 0px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'apple', );
+$chrome-name: 'chrome';
+$chrome-x: 0px;
+$chrome-y: 128px;
+$chrome-offset-x: 0px;
+$chrome-offset-y: -128px;
+$chrome-width: 128px;
+$chrome-height: 128px;
+$chrome-total-width: 384px;
+$chrome-total-height: 384px;
+$chrome-image: '../img/sprite/png/sprite.png';
+$chrome: (0px, 128px, 0px, -128px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'chrome', );
+$edge-name: 'edge';
+$edge-x: 128px;
+$edge-y: 128px;
+$edge-offset-x: -128px;
+$edge-offset-y: -128px;
+$edge-width: 128px;
+$edge-height: 128px;
+$edge-total-width: 384px;
+$edge-total-height: 384px;
+$edge-image: '../img/sprite/png/sprite.png';
+$edge: (128px, 128px, -128px, -128px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'edge', );
+$explorer-name: 'explorer';
+$explorer-x: 256px;
+$explorer-y: 0px;
+$explorer-offset-x: -256px;
+$explorer-offset-y: 0px;
+$explorer-width: 128px;
+$explorer-height: 128px;
+$explorer-total-width: 384px;
+$explorer-total-height: 384px;
+$explorer-image: '../img/sprite/png/sprite.png';
+$explorer: (256px, 0px, -256px, 0px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'explorer', );
+$firefox-name: 'firefox';
+$firefox-x: 256px;
+$firefox-y: 128px;
+$firefox-offset-x: -256px;
+$firefox-offset-y: -128px;
+$firefox-width: 128px;
+$firefox-height: 128px;
+$firefox-total-width: 384px;
+$firefox-total-height: 384px;
+$firefox-image: '../img/sprite/png/sprite.png';
+$firefox: (256px, 128px, -256px, -128px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'firefox', );
+$linux-name: 'linux';
+$linux-x: 0px;
+$linux-y: 256px;
+$linux-offset-x: 0px;
+$linux-offset-y: -256px;
+$linux-width: 128px;
+$linux-height: 128px;
+$linux-total-width: 384px;
+$linux-total-height: 384px;
+$linux-image: '../img/sprite/png/sprite.png';
+$linux: (0px, 256px, 0px, -256px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'linux', );
+$opera-name: 'opera';
+$opera-x: 128px;
+$opera-y: 256px;
+$opera-offset-x: -128px;
+$opera-offset-y: -256px;
+$opera-width: 128px;
+$opera-height: 128px;
+$opera-total-width: 384px;
+$opera-total-height: 384px;
+$opera-image: '../img/sprite/png/sprite.png';
+$opera: (128px, 256px, -128px, -256px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'opera', );
+$safari-name: 'safari';
+$safari-x: 256px;
+$safari-y: 256px;
+$safari-offset-x: -256px;
+$safari-offset-y: -256px;
+$safari-width: 128px;
+$safari-height: 128px;
+$safari-total-width: 384px;
+$safari-total-height: 384px;
+$safari-image: '../img/sprite/png/sprite.png';
+$safari: (256px, 256px, -256px, -256px, 128px, 128px, 384px, 384px, '../img/sprite/png/sprite.png', 'safari', );
+$spritesheet-width: 384px;
+$spritesheet-height: 384px;
+$spritesheet-image: '../img/sprite/png/sprite.png';
+$spritesheet-sprites: ($android, $apple, $chrome, $edge, $explorer, $firefox, $linux, $opera, $safari, );
+$spritesheet: (384px, 384px, '../img/sprite/png/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
